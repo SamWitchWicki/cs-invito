@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const urls = [];
+urls[0] = "https://wa.me/+6287715003178";
+urls[1] = "https://wa.me/+6287715003184";
+
+const random = Math.floor(Math.random() * urls.length);
+
+export default function Redirection() {
+  useEffect(() => {
+    window.location.href = urls[random];
+  }, []);
+
+  return null;
 }
-
-export default App;
